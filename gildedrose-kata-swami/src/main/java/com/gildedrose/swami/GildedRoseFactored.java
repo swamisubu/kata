@@ -2,9 +2,13 @@ package com.gildedrose.swami;
 
 import java.util.List;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.extern.java.Log;
 
 @Log
+@AllArgsConstructor
+@NoArgsConstructor
 public class GildedRoseFactored {
 	
 	List<Item> items;
@@ -14,12 +18,9 @@ public class GildedRoseFactored {
 	private static final String HAND_RAGNAROS = "Sulfuras, Hand of Ragnaros";
 	
 
-   public GildedRoseFactored(List<Item> items) {
-        this.items = items;
-    } 
 
     public void updateQuality() {
-    		
+    	try {
     		items.forEach( it -> {
     			log.info("Start factored name: "+it.getName());
     			log.info("Start factored quality: "+it.getQuality());
@@ -57,5 +58,9 @@ public class GildedRoseFactored {
     			log.info("End factored quality: "+it.getQuality());
     			log.info("End factored sellin: "+it.getSellIn());
     		});
+    	 } catch (Exception e) {
+    		 log.severe("Error occured while updating quality: " +e.getMessage());
+    	 }
     }
+  
 }

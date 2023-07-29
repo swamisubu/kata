@@ -10,8 +10,9 @@ import org.junit.jupiter.api.Test;
 class GildedRoseTest {
 
 	
+	
     @Test
-    void testQuality() {
+    public void testQuality() {
     	List<Item> itemList = new ArrayList<>();
 		Item it1 = new Item();
 		it1.setName("Ajay");
@@ -25,7 +26,7 @@ class GildedRoseTest {
     }
     
     @Test
-    void testQualityWithAgedBrie() {
+    public void testQualityWithAgedBrie() {
     	List<Item> itemList = new ArrayList<>();
 		Item it1 = new Item();
 		it1.setName("Aged Brie");
@@ -39,7 +40,7 @@ class GildedRoseTest {
     }
     
     @Test
-    void testQualityWithBackStage() {
+   public void testQualityWithBackStage() {
     	List<Item> itemList = new ArrayList<>();
 		Item it1 = new Item();
 		it1.setName("Backstage passes to a TAFKAL80ETC concert");
@@ -51,5 +52,8 @@ class GildedRoseTest {
         assertEquals(0, gildRose.items.get(0).getQuality());
         assertEquals(-1, gildRose.items.get(0).getSellIn());
     }
+    
+    
+    
 
 }
